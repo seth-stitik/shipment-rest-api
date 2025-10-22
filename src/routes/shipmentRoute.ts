@@ -14,6 +14,7 @@ router.post("/", (req: Request, res: Response) => {
     }
 
     const shipment = createShipment(originCity, destinationCity, weight);
+    console.log("Created shipment:", shipment);
     res.status(201).json(shipment);
 });
 
@@ -24,6 +25,7 @@ router.get("/:id", (req: Request, res: Response) => {
     // validate if shipment exists
     if (!shipment) return res.status(404).json({ error: "Shipment not found" });
 
+    console.log("Retrieved shipment:", shipment);
     res.json(shipment);
 });
 
@@ -39,6 +41,7 @@ router.patch("/:id/status", (req: Request, res: Response) => {
     const updated = updateShipmentStatus(req.params.id, status as ShipmentStatus);
     if (!updated) return res.status(404).json({ error: "Shipment not found" }); // if not updated, by logic the shipment was not found
     
+    console.log("Updated shipment status:", updated);
     res.json(updated);
 });
 
