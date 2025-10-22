@@ -5,5 +5,6 @@ export interface Shipment {
     origin: string;
     destination: string;
     status: ShipmentStatus;
-    estimatedDeliveryDate: Date;
+    weight: number;
+    estimatedDeliveryHours: number;
 }
