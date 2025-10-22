@@ -27,12 +27,12 @@ Simple REST API built with **TypeScript**, **Node**, and **Express** using in-me
 
 ## Setup
 
-- Install Dependencies
+Install Dependencies
 ```bash 
 npm install
 ```
 
-- Run Server 
+Run Server 
 ```bash
 npm run dev
 ```
