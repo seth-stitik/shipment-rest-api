@@ -25,13 +25,22 @@ export function createShipment(originCity: string, destinationCity: string, weig
 
 // function to get a shipment by id
 export function getShipmentById(id: string): Shipment | undefined {
-    return shipments.find(s => s.id === id);
+    if (!id || id.trim() === "") {
+    return undefined;
+    }
+    return shipments.find(s => s.id === id);    
 }
 
 // fnction to update shipment status
 export function updateShipmentStatus(id: string, newStatus: ShipmentStatus): Shipment | undefined {
+    if (!id || id.trim() === "") {
+        return undefined;
+    }
     const shipment = shipments.find(s => s.id === id);
-    if (!shipment) return undefined;
+    if (!shipment) {
+        return undefined;
+    }
+
     shipment.status = newStatus;
     return shipment;
 }
