@@ -3,8 +3,9 @@ import { Shipment, ShipmentStatus } from "../types/shipment";
 import { estimateDeliveryHours } from "../utils/deliveryEstimator";
 
 // basic function for id generation
+let counter = 0;
 function generateId(): string {
-    return `${Math.floor(Math.random() * 10000)}`;
+    return `${++counter}`;
 }
 
 // function to create a shipment 
